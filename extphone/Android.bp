@@ -11,6 +11,9 @@ java_library {
     ],
     system_ext_specific: true,
 
+    required: [
+        "extphonelib-system",
+    ],
 }
 
 java_library {
@@ -25,6 +28,17 @@ java_library {
     ],
     product_specific: true,
 
+}
+
+java_library {
+    name: "extphonelib-system",
+    installable: true,
+    sdk_version: "system_current",
+
+    srcs: [
+        "src/com/**/*.java",
+        "src/com/**/I*.aidl",
+    ],
 }
 
 // ==========================================
